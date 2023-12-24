@@ -2,23 +2,19 @@ import java.util.*;
 public class Main {
     public static void main(String[] args) {
         Scanner sc = new Scanner(System.in);
-        System.out.print("Введите кол-во строк и столбцов");
+
+        System.out.println("Введите размерность квадратной матрицы: ");
         int n = sc.nextInt();
-        int m = sc.nextInt();
-
-        System.out.print("Задайте любое число");
-        int x = sc.nextInt();
-
-        int [][]mat= new int[n][m];
-
-        for(int i = 0; i < n;i++)
-            for(int j = 0 ; j < m;j++){
-                mat[i][j]=sc.nextInt();
-            }
-        Matrix ma=new Matrix(mat);
-
-        System.out.print(ma.prPerfect());
-        
+        int [][] b = new int[n][n];
+        for(int i = 0 ; i < b.length;i++){
+            for(int j = 0; j < b[i].length;j++)
+                b[i][j] = sc.nextInt();
+        }
+        Matrix a = new Matrix(b);
+        System.out.println("Сумма кратных 3, у которых четные индексы: "+ a.sumKrat());
+        System.out.println("Матрица, с обнуленными совершенными элементами, выше главной диагонали:  ");
+        a.Obnul();
+        a.print();
     }
 }
 //6 1 6 4
